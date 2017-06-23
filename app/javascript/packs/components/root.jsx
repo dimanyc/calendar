@@ -3,6 +3,7 @@ import SearchBar from './searchbar';
 import SlotDetail from './slot_detail';
 import SlotList   from './slot_list';
 import moment     from 'moment';
+import $ from 'jquery';
 
 export default class Root extends Component {
 
@@ -14,24 +15,29 @@ export default class Root extends Component {
   }
 
   setCurrentSlot(slot){
-    this.setState(  {
+    if(slot) {
+    this.setState({
       date: slot.title
     })
+    }
   }
 
   render(){
     return(
       <div className="container">
         <div className="row">
+
           <div className="col-md-7">
             <SearchBar />
-            <SlotDetail date={this.state.date} />
+            <SlotDetail date = { this.state.date } />
           </div>
+
           <div className="col-md-5">
             <SlotList
-              slots = { this.props.slots }
+              slots          = { this.props.slots }
               setCurrentSlot = { this.setCurrentSlot() } />
           </div>
+
         </div>
       </div>
     )

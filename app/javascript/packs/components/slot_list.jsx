@@ -12,9 +12,10 @@ export default class SlotList extends Component {
     const slots = this.props.slots.map((slot) => {
       return (
         <Slot
-          key   ={ slot.id }
-          title ={ slot.title }
-          setCurrentSlot = { this.props.setCurrentSlot() }
+          id    = { slot.id }
+          key   = { slot.id }
+          title = { slot.title }
+          setCurrentSlot = { this.props.setCurrentSlot }
         />
       )
     });
