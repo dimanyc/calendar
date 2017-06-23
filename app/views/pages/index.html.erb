@@ -1,1 +1,7 @@
 <%= javascript_pack_tag 'app' %>
+<%= content_tag 'div',
+  id: 'nodes',
+  data: {
+    slots: @nodes
+  }.to_json do %>
+<% end %>
